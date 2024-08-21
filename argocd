@@ -1,0 +1,15 @@
+
+kubectl create namespace argocd
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+kubectl get pods -n argocd
+kubectl get svc -n argocd
+kubectl edit svc argocd-server -n argocd 
+( egit the luster Ip to NodePort)
+kubectl port-forward svc/argocd-server -n argocd --address 0.0.0.0 8080:443
+
+copy the ec2 public ip and paste it in browser followed by 8080
+
+open a duplicate tab for getting the password
+
+username : admin
+for getting password type - [ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d; echo ] 
