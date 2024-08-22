@@ -6,3 +6,4 @@ kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana
 
 kubectl port-forward svc/grafana-ext --address 0.0.0.0 30279:80 -n default
 
+Access it with public ip of ec2 with portnumber (30279)
