@@ -1,0 +1,2 @@
+Installl docker first then run the sonarqube as container image
+docker run -it -d -p 9000:9000 sonarqube:lts-communit
