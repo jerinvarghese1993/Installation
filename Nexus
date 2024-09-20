@@ -1,0 +1,2 @@
+Insteall Docker first then run the nexus as a dockerfile
+docker run -it -d -p 8081:8081 sonatype/nexus3
