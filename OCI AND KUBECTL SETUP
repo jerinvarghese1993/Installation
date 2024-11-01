@@ -1,0 +1,17 @@
+OCI SETUP IN LINUX
+
+bash -c "$(curl -L https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh)"
+source ~/.bashrc
+oci --version
+oci setup config ( just click enter and yes)
+Go to --> ls /home/opc/.oci/ 
+Copy the public ip inside the .oci folder and paste it in the OCI infra
+oci iam region list ( for varification you can see a list of regions)
+
+KUBECTL SETUP IN LINUX
+
+curl -LO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x ./kubectl
+sudo mv ./kubectl /usr/local/bin/kubectl
+export KUBECONFIG=/home/your-user/.kube/config
+kubectl get nodes
