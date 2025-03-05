@@ -1,3 +1,7 @@
+Create 2 compute instance one Master and other is slave 
+
+Install below steps in Master as well as slave 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
 echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
@@ -8,3 +12,6 @@ sudo apt-get install jenkins
 sudo apt install openjdk-17-jre
 sudo systemctl enable jnekins
 sudo systemctl start jenkins
+
+Install below step in slave
+!!!!!!!!!!!!!!!!!!!!!!!!!!!
