@@ -15,3 +15,23 @@ sudo systemctl start jenkins
 
 Install below step in slave
 !!!!!!!!!!!!!!!!!!!!!!!!!!!
+sudo apt update
+sudo apt upgrade
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io
+sudo chmod 777 /var/run/docker.sock
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+-->Create a remote root directory in slave mechine eg: create a folder named jenkins-slave in ( sudo /home/ubuntu/jenkins-slave ) & give permission sudo chmod 777 jenkins-slave
+-->Create ssh-keygen in slave mechine and cat the public as well as private key 
+-->Go to Jenkins->Credentials->Global->Choose sshkeygen with private key and paste the private key over there and save it 
+-->Go to Slave mechine vi authorised key and paste the public key in the top section and save it 
+-->Now go to Jenkins ->Node-> new node-> in remote root directory paste the location (/home/ubuntu/jenkins-slave) 
+
+-->Now go and launch the agent it will start working.
