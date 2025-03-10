@@ -27,10 +27,11 @@ sudo apt install docker-ce docker-ce-cli containerd.io
 sudo chmod 777 /var/run/docker.sock
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+sudo apt install openjdk-17-jre
 
 -->Create a remote root directory in slave mechine eg: create a folder named jenkins-slave in ( sudo /home/ubuntu/jenkins-slave ) & give permission sudo chmod 777 jenkins-slave
 -->Create ssh-keygen in slave mechine and cat the public as well as private key 
--->Go to Jenkins->Credentials->Global->Choose sshkeygen with private key and paste the private key over there and save it 
+-->Go to Jenkins->Credentials->Global->Choose sshusername with private key and paste the private key over there and save it ( username you can check through ubuntu or root you are creating the keygen based on that put either ubuntu or root)
 -->Go to Slave mechine vi authorised key and paste the public key in the top section and save it 
 -->Now go to Jenkins ->Node-> new node-> in remote root directory paste the location (/home/ubuntu/jenkins-slave) 
 
