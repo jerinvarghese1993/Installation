@@ -10,7 +10,7 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
 sudo apt-get update
 sudo apt-get install jenkins
 sudo apt install openjdk-17-jre
-sudo systemctl enable jnekins
+sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
 Install below step in slave
